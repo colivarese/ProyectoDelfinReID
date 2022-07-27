@@ -71,7 +71,8 @@ class SiameseNetwork2(nn.Module):
         positive = self.transformation(Image.fromarray(positive_path.astype('uint8'), 'RGB')) 
         test = self.transformation(Image.fromarray(test_path.astype('uint8'), 'RGB'))
 
-        positive, test =  positive.cuda(), test.cuda()
+        #positive, test =  positive.cuda(), test.cuda()
+        positive, test =  positive, test
 
         positive_out, test_out = self.forward(positive[None, ...], test[None, ...])
 
