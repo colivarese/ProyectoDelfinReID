@@ -18,7 +18,8 @@ def transform_path(positive_path, test_path):
     positive = transformation(Image.fromarray(positive_path.astype('uint8'), 'RGB')) 
     test = transformation(Image.fromarray(test_path.astype('uint8'), 'RGB'))
 
-    positive, test =  positive.cuda(), test.cuda()
+    #positive, test =  positive.cuda(), test.cuda()
+    positive, test =  positive, test
 
     return positive, test
 
